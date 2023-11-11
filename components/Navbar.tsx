@@ -32,11 +32,12 @@ export default function Navbar() {
     variants={navVariants}
     initial="hidden"
     whileInView="show"
+    viewport={{ once: true, amount: 0.25 }}
     className={`${styles.xPaddings} py-8 relative`}
     onMouseLeave={() => setIsHovering(false)}
   >
-    <div className="absolute w-[50%] inset-0 gradient-01"/>
     <div className="flex justify-end">
+    {/* <div className="absolute w-[50%] inset-0 gradient-01"/> */}
       <div className="flex-grow flex flex-col, items-center">
         <AnimatePresence>
         {isHovering && (
@@ -50,7 +51,7 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={item.link}
-                  className="font-mono text-xl text-secondary-white hover:scale-110"
+                  className="font-mono text-xl text-secondary-white hover:scale-110 hover:drop-shadow-[0_0_0.5rem_#ffffff]"
                 >
                   {item.name}
                 </a>
@@ -61,7 +62,7 @@ export default function Navbar() {
         }
         </AnimatePresence>
       </div>
-      <div className="hover:bg-gray-700 hover:border-md hover:rounded-md hover:cursor-pointer hover:scale-125 padding-2 h-14 w-14 p-2">
+      <div className="hover:cursor-pointer hover:scale-125 hover:drop-shadow-[0_0_0.5rem_#ffffff] padding-2 h-14 w-14 p-2">
         <img src="/menu.svg" 
             className="h-full w-full"
             onMouseEnter={() => setIsHovering(true)}

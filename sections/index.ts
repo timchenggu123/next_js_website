@@ -1,5 +1,11 @@
 import Hero from "./Hero"
+import About from "./About"
+import Journey from "./Journey"
+import Skills from "./Skills"
 
 export { 
-    Hero
+    About,
+    Hero,
+    Journey,
+    Skills,
 }
