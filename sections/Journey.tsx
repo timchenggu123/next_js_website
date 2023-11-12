@@ -76,21 +76,23 @@ export default function Journey() {
     const [translateX, setTranslateX] = useState('0rem');
     return (
     <>
-    <section className="h-screen relative snap-start p-3">
+    <section className="min-h-screen relative">
         <motion.div
             initial={{ opacity: 0}}
             whileInView={{ opacity: 1}}
-            viewport={{ once: false, amount: 0.75 }}
+            viewport={{ once: true, amount: 0.25 }}
             transition={{duration: 0.5, delay: 0.5 }}
-            className="relative top-[20%] left-[15%] h-[70%] w-[70%] object-cover rounded-[7rem]"
-        >
+            className="absolute inset-0 flex flex-col justify-center items-center rounded-[7rem]"
+        > 
             <Image
                 src="/bg1.jpg"
                 alt="background"
-                fill={true}
+                width={1280}
+                height={720}
                 style={{objectFit: 'cover'}}
-                className="rounded-[7rem]"
+                className="rounded-[7rem] h-[70%] w-[70%] py-11"
             />
+
         </motion.div>
         <div className="absolute inset-0 rounded-[7rem] backdrop-blur-lg backdrop-brightness-50 bg-slate-700 bg-opacity-10"> 
             <h1
@@ -101,7 +103,7 @@ export default function Journey() {
             </h1>
 
             {/* For medium and large displays */}
-            <div className="md:flex hidden relative max-w-[80rem] mx-auto top-[12rem] flex-col items-center overflow-x-scroll ">
+            <div className="md:flex hidden relative max-w-[80rem] mx-auto top-[12rem] flex-col items-center">
                 <motion.div
                     initial={{opacity:0}}
                     whileInView={{ opacity:1}}
@@ -125,7 +127,7 @@ export default function Journey() {
             </div>
 
             {/* For Small Displays */}
-            <div className="md:hidden flex absolute w-[screen] mx-auto top-[10rem] flex-col items-center h-[40rem] ">
+            <div className="md:hidden flex absolute w-[screen] mx-auto top-[10rem] flex-col items-center h-fit ">
                 <motion.div
                     initial={{scaleX: 0}}
                     whileInView={{ scaleX:1}}
@@ -133,8 +135,8 @@ export default function Journey() {
                     transition={{
                         duration: 0.2, 
                     }}
-                    className="relative hover:z-10 z-1 flex justify-center flex-wrap mx-auto p-2 overflow-scroll">
-                    <Steps props={{data: data, height: 12, width: 10, type: 0, rotation: 6}}/>
+                    className="relative hover:z-10 z-1 flex justify-center flex-wrap mx-auto p-2 h-fit">
+                    <Steps props={{data: data, height: 12, width: 10, type: 0, rotation: 0}}/>
                 </motion.div>
             </div>
             
