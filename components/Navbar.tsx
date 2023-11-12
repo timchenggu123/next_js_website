@@ -12,6 +12,10 @@ const Items = [
     link: '#about',
   },
   {
+    name: 'Skills',
+    link: '#skills',
+  },
+  {
     name: 'Journey',
     link: '#journey',
   },
@@ -44,7 +48,7 @@ export default function Navbar() {
           <motion.div
             initial={{ opacity: 0, x: "10%"}}
             animate={{ opacity: 1, x: 0, margin: "auto"}}
-            className={`${styles.innerWidth} flex justify-around`}
+            className={`${styles.innerWidth} flex flex-col md:flex-row items-center justify-around`}
             exit={{ opacity: 0, x: "10%" }}
           >
             {Items.map((item) => (

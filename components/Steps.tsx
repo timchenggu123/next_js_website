@@ -12,6 +12,7 @@ function Step({props}:{
         h: number,
         w: number,
         index: number,
+        rotation: number,
         orientation: string,
     }
 }){
@@ -24,7 +25,7 @@ function Step({props}:{
                     height: `${props.h}rem`,
                     marginBottom: `1rem`,
                 }} 
-                whileHover={{zIndex: 20, maxWidth: `${props.w+8}rem`, rotate: 0, scale:1.1}}
+                whileHover={{zIndex: 20, maxWidth: `${props.w+5}rem`, rotate: 0, scale:1.1}}
                 transition={{duration: 0.1}}
                 className={`flex-grow felx-shrink-1 relative z-10 shadow-2xl border-8 border-slate-300 m-1 z-2`}
             >   
@@ -34,22 +35,22 @@ function Step({props}:{
                     fill={true}
                     style={{objectFit: 'cover'}}
                 />
-                <div className="flex flex-col justify-start items-center h-full w-full z-3">
+                <div className="flex flex-col justify-between items-center h-full w-full z-3">
+                    <h1 className="relative text-md font-mono text-secondary-white text-center">{props.data.date}</h1>
                     <div className="h-fit w-full flex-col justify-center items-between z-4 bg-slate-700 bg-opacity-60 backdrop-blur-md p-2">
                         <h1 className="text-lg font-thin text-secondary-white text-center">{props.data.title}</h1>
                         <h1 className="text-md font-bold text-secondary-white text-center">{props.data.org}</h1>
-                        <h1 className="text-sm font-mono text-secondary-white text-center">{props.data.date}</h1>
                     </div>
                 </div>
             </motion.div>) 
             : (
             <motion.div style={{
                     maxWidth: `${props.w}rem`,
-                    rotate: 6,
+                    rotate: props.rotation,
                     height: `${props.h}rem`,
                     marginBottom: `1rem`,
                 }} 
-                whileHover={{zIndex: 20, maxWidth: `${props.w+8}rem`, rotate: 0, scale:1.1}}
+                whileHover={{zIndex: 20, maxWidth: `${props.w+5}rem`, rotate: 0, scale:1.1}}
                 transition={{duration: 0.1}}
                 className={`flex-grow flex-shrink-1 relative z-10 shadow-2xl border-8 border-slate-300 m-1 z-1`}
             > 
@@ -57,14 +58,15 @@ function Step({props}:{
                     src={props.data.bg}
                     alt="background"
                     fill={true}
+                    priority={true}
                     style={{objectFit: 'cover'}}
                 />
-                <div className="flex flex-col justify-end items-center h-full w-full">
-                    <div className="h-fit w-full flex-col justify-center items-between z-2 bg-slate-700 bg-opacity-60 backdrop-blur-md p-2">
-                        <h1 className="text-sm font-mono text-secondary-white text-center">{props.data.date}</h1>
+                <div className="flex flex-col justify-between items-center h-full w-full">
+                    <div className="relative h-fit w-full flex-col justify-center items-between z-2 bg-slate-700 bg-opacity-60 backdrop-blur-md p-2">
                         <h1 className="text-md font-bold text-secondary-white text-center">{props.data.org}</h1>
                         <h1 className="text-lg font-thin text-secondary-white text-center">{props.data.title}</h1>
                     </div>
+                    <h1 className="relative text-md font-mono text-secondary-white text-center">{props.data.date}</h1>
                 </div>
             </motion.div> 
             )
@@ -83,11 +85,12 @@ export default function Steps({props}:{
         }[],
         type: 1 | 0,
         height: number,
-        width: number
+        width: number,
+        rotation?: number,
     }
 }) {
     const width = props.width;
-
+    const rotation = props.rotation || 0;
     return (
         <>
         {
@@ -97,6 +100,7 @@ export default function Steps({props}:{
                         w: width,
                         h: props.height,
                         index: index,
+                        rotation: rotation,
                         orientation: (index+props.type)%2 == 0 ? "up":"down"
                     };
                     return <Step key={index} props={pp}/>

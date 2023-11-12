@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../styles';
 import { slideIn, staggerContainer, textContainer, textVariant, textVariant2 } from '../utils/motion';
+import CursorBlinker from '@/components/Cursor';
 
 const data = [
     {
@@ -75,7 +76,7 @@ export default function Journey() {
     const [translateX, setTranslateX] = useState('0rem');
     return (
     <>
-    <section id="journey" className="h-screen relative snap-start p-3">
+    <section className="h-screen relative snap-start p-3">
         <motion.div
             initial={{ opacity: 0}}
             whileInView={{ opacity: 1}}
@@ -93,58 +94,47 @@ export default function Journey() {
         </motion.div>
         <div className="absolute inset-0 rounded-[7rem] backdrop-blur-lg backdrop-brightness-50 bg-slate-700 bg-opacity-10"> 
             <h1
-                className = "absolute w-full top-[5rem] text-9xl text-center font-mon drop-shadow-[0_0_3rem_#ffffff70] text-secondary-white"
+                className = "absolute w-full top-[5rem] text-xl md:text-3xl lg:text-7xl text-center font-mono drop-shadow-[0_0_3rem_#ffffff70] text-secondary-white"
             >
-                Journey
+                {`<Journey>`}
+                <CursorBlinker/>
             </h1>
 
             {/* For medium and large displays */}
-            <div className="md:flex hidden relative max-w-[80rem] mx-auto top-[15rem] flex-col items-center overflow-x-scroll">
+            <div className="md:flex hidden relative max-w-[80rem] mx-auto top-[12rem] flex-col items-center overflow-x-scroll ">
                 <motion.div
-                    initial={{opacity:0, scaleX: 0}}
-                    whileInView={{ opacity:1, scaleX:1}}
-                    viewport={{once: true, amount: 0.75}}
+                    initial={{opacity:0}}
+                    whileInView={{ opacity:1}}
+                    viewport={{once: true, amount: 0.25}}
                     transition={{
-                        duration: 0.5, 
-                        delay: 0.3,
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 30,
+                        duration: 0.1, 
                     }}
                     className="relative hover:z-10 z-1 flex justify-start w-full mb-2 p-2">
-                    <Steps props={{data: data.slice(0,5), height: 19, width: 13, type: 0}}/>
+                    <Steps props={{data: data.slice(0,5), height: 19, width: 13, type: 0, rotation:6}}/>
                 </motion.div>
                 <motion.div 
-                    initial={{opacity:0, scaleX:0}}
-                    whileInView={{opacity:1, scaleX:1}}
-                    viewport={{once: true, amount: 0.75}}
+                    initial={{opacity:0}}
+                    whileInView={{opacity:1}}
+                    viewport={{once: true, amount: 0.25}}
                     transition={{
-                        duration: 0.5, 
-                        delay: 0.3,
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 30,
+                        duration: 0.1, 
                     }}
                     className="relative hover:z-10 z-1 flex w-full justify-end p-2">
-                    <Steps props ={{data: data.slice(5,), height: 19, width: 13, type: 1}}/>
+                    <Steps props ={{data: data.slice(5,), height: 19, width: 13, type: 1, rotation: 6}}/>
                 </motion.div>
             </div>
 
             {/* For Small Displays */}
-            <div className="md:hidden flex absolute w-screen mx-auto top-[15rem] flex-col items-center h-[40rem] p-2">
+            <div className="md:hidden flex absolute w-[screen] mx-auto top-[10rem] flex-col items-center h-[40rem] ">
                 <motion.div
                     initial={{scaleX: 0}}
                     whileInView={{ scaleX:1}}
                     viewport={{once: true, amount: 0.5}}
                     transition={{
-                        duration: 0.5, 
-                        delay: 0.3,
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 30,
+                        duration: 0.2, 
                     }}
                     className="relative hover:z-10 z-1 flex justify-center flex-wrap mx-auto p-2 overflow-scroll">
-                    <Steps props={{data: data, height: 12, width: 10, type: 0}}/>
+                    <Steps props={{data: data, height: 12, width: 10, type: 0, rotation: 6}}/>
                 </motion.div>
             </div>
             
