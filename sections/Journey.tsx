@@ -76,7 +76,7 @@ export default function Journey() {
     const [translateX, setTranslateX] = useState('0rem');
     return (
     <>
-    <section className="min-h-screen relative">
+    <section className="min-h-screen relative h-fit">
         <motion.div
             initial={{ opacity: 0}}
             whileInView={{ opacity: 1}}
@@ -94,16 +94,16 @@ export default function Journey() {
             />
 
         </motion.div>
-        <div className="absolute inset-0 rounded-[7rem] backdrop-blur-lg backdrop-brightness-50 bg-slate-700 bg-opacity-10"> 
+        <div className="w-screen h-auto rounded-[7rem] backdrop-blur-lg backdrop-brightness-50 bg-slate-700 bg-opacity-10"> 
             <h1
-                className = "absolute w-full top-[5rem] text-xl md:text-3xl lg:text-7xl text-center font-mono drop-shadow-[0_0_3rem_#ffffff70] text-secondary-white"
+                className = "w-full pt-[3rem] text-xl md:text-3xl lg:text-7xl text-center font-mono drop-shadow-[0_0_3rem_#ffffff70] text-secondary-white"
             >
                 {`<Journey>`}
                 <CursorBlinker/>
             </h1>
 
             {/* For medium and large displays */}
-            <div className="md:flex hidden relative max-w-[80rem] mx-auto top-[12rem] flex-col items-center">
+            <div className="md:flex hidden relative max-w-[80rem] pt-[2rem] mx-auto flex-col items-center">
                 <motion.div
                     initial={{opacity:0}}
                     whileInView={{ opacity:1}}
@@ -127,7 +127,7 @@ export default function Journey() {
             </div>
 
             {/* For Small Displays */}
-            <div className="md:hidden flex absolute w-[screen] mx-auto top-[10rem] flex-col items-center h-fit ">
+            <div className="md:hidden flex w-[screen] mx-auto pt-[5rem] flex-col items-center">
                 <motion.div
                     initial={{scaleX: 0}}
                     whileInView={{ scaleX:1}}
@@ -135,7 +135,7 @@ export default function Journey() {
                     transition={{
                         duration: 0.2, 
                     }}
-                    className="relative hover:z-10 z-1 flex justify-center flex-wrap mx-auto p-2 h-fit">
+                    className="relative hover:z-10 z-1 flex justify-center flex-wrap mx-auto p-2 h-auto">
                     <Steps props={{data: data, height: 12, width: 10, type: 0, rotation: 0}}/>
                 </motion.div>
             </div>

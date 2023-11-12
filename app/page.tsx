@@ -39,13 +39,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div id={"journey"}>
+      <div id={"journey"} className='h-fit'>
         <Journey/>
       </div>
 
       {/* Section pad */}
       <div className="block w-screen h-[10rem] bg-transparent"/>
-      
+
       <div id={"contact"}>
         <Contact/>
       </div>
