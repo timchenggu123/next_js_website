@@ -19,10 +19,10 @@ const Items = [
     name: 'Journey',
     link: '#journey',
   },
-  {
-    name: 'Projects',
-    link: '#projects',
-  },
+  // {
+  //   name: 'Projects',
+  //   link: '#projects',
+  // },
   {
     name: 'Contact',
     link: '#contact',
