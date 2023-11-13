@@ -136,7 +136,7 @@ export default function Journey() {
                         duration: 0.2, 
                     }}
                     className="relative hover:z-10 z-1 flex justify-center flex-wrap mx-auto p-2 h-auto">
-                    <Steps props={{data: data, height: 12, width: 10, type: 0, rotation: 0}}/>
+                    <Steps props={{data: data, height: 12, width: 10, type: 0, rotation: 0, expansion: 2}}/>
                 </motion.div>
             </div>
             

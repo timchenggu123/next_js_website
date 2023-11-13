@@ -14,6 +14,7 @@ function Step({props}:{
         index: number,
         rotation: number,
         orientation: string,
+        expansion: number
     }
 }){
     return (
@@ -25,7 +26,7 @@ function Step({props}:{
                     height: `${props.h}rem`,
                     marginBottom: `1rem`,
                 }} 
-                whileHover={{zIndex: 20, maxWidth: `${props.w+5}rem`, rotate: 0, scale:1.1}}
+                whileHover={{zIndex: 20, maxWidth: `${props.w+props.expansion}rem`, rotate: 0, scale:1.1}}
                 transition={{duration: 0.1}}
                 className={`flex-grow felx-shrink-1 relative z-10 shadow-2xl border-8 border-slate-300 m-1 z-2`}
             >   
@@ -50,7 +51,7 @@ function Step({props}:{
                     height: `${props.h}rem`,
                     marginBottom: `1rem`,
                 }} 
-                whileHover={{zIndex: 20, maxWidth: `${props.w+5}rem`, rotate: 0, scale:1.1}}
+                whileHover={{zIndex: 20, maxWidth: `${props.w+props.expansion}rem`, rotate: 0, scale:1.1}}
                 transition={{duration: 0.1}}
                 className={`flex-grow flex-shrink-1 relative z-10 shadow-2xl border-8 border-slate-300 m-1 z-1`}
             > 
@@ -87,10 +88,12 @@ export default function Steps({props}:{
         height: number,
         width: number,
         rotation?: number,
+        expansion?: number,
     }
 }) {
     const width = props.width;
     const rotation = props.rotation || 0;
+    const expansion = props.expansion || 7;
     return (
         <>
         {
@@ -101,7 +104,8 @@ export default function Steps({props}:{
                         h: props.height,
                         index: index,
                         rotation: rotation,
-                        orientation: (index+props.type)%2 == 0 ? "up":"down"
+                        orientation: (index+props.type)%2 == 0 ? "up":"down",
+                        expansion: expansion,
                     };
                     return <Step key={index} props={pp}/>
                 })
