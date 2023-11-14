@@ -36,38 +36,38 @@ export default function Contact() {
     <section className="h-screen flex flex-col justify-start items-center">
         <div className="h-[10rem] block bg-transparent"/>
         <motion.h1 
-            initial={{opacity:0, pathLength:0}}
-            whileInView={{opacity:1, pathLength:1}}
+            initial={{opacity:0}}
+            whileInView={{opacity:1}}
             className="text-xl md:text-3xl lg:text-7xl text-secondary-white font-mono mb-10 mt-[5rem]">{`<Contact>`}<CursorBlinker/></motion.h1>
         <div className="flex justify-around items-center max-w-6xl w-full mt-11">
             <motion.a 
-                initial={{opacity:0, pathLength:0}}
+                initial={{opacity:0}}
                 whileHover={{scale:1.1}}
-                whileInView={{opacity:1, pathLength:1}}
+                whileInView={{opacity:1}}
                 href="https://github.com/timchenggu123"
                 target="_blank"
-                className="invert md:h-[8rem] h-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]"><AiFillGithub size="auto"/></motion.a>
+                className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]"><AiFillGithub size="auto"/></motion.a>
             <motion.a 
-                initial={{opacity:0, pathLength:0}}
+                initial={{opacity:0}}
                 whileHover={{scale:1.1}}
-                whileInView={{opacity:1, pathLength:1}}
+                whileInView={{opacity:1}}
                 href="https://www.linkedin.com/in/tim-chenggu/"
                 target="_blank"
-                className="invert md:h-[8rem] h-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]"><AiFillLinkedin size="auto"/></motion.a>
+                className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]"><AiFillLinkedin size="auto"/></motion.a>
             <motion.a   
-                initial={{opacity:0, pathLength:0}}
+                initial={{opacity:0}}
                 whileHover={{scale:1.1}}
-                whileInView={{opacity:1, pathLength:1}}
+                whileInView={{opacity:1}}
                 onClick={() => {handleCopy()}}
-                className="invert md:h-[8rem] h-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]"><AiTwotoneMail alt="Click To Copy" size="auto" /></motion.a>
+                className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]"><AiTwotoneMail alt="Click To Copy" size="auto" /></motion.a>
             <motion.a   
-                initial={{opacity:0, pathLength:0}}
+                initial={{opacity:0}}
                 whileHover={{scale:1.1}}
-                whileInView={{opacity:1, pathLength:1}}
+                whileInView={{opacity:1}}
                 href="/cv.pdf"
                 download={true}
                 className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]">
-                <Image src="/cv.svg" alt="Click To Download" fill={true}/>
+                    <Image src="/cv.svg" alt="Click To Download" width={400} height={400}/>
                 </motion.a>
             
         </div>
