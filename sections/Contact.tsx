@@ -46,20 +46,27 @@ export default function Contact() {
                 whileInView={{opacity:1}}
                 href="https://github.com/timchenggu123"
                 target="_blank"
-                className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]"><AiFillGithub size="auto"/></motion.a>
+                className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]">
+                    <AiFillGithub size="auto"/>
+            </motion.a>
             <motion.a 
                 initial={{opacity:0}}
                 whileHover={{scale:1.1}}
                 whileInView={{opacity:1}}
                 href="https://www.linkedin.com/in/tim-chenggu/"
                 target="_blank"
-                className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]"><AiFillLinkedin size="auto"/></motion.a>
+                className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]">
+                    <AiFillLinkedin size="auto"/>
+            </motion.a>
             <motion.a   
                 initial={{opacity:0}}
                 whileHover={{scale:1.1}}
                 whileInView={{opacity:1}}
                 onClick={() => {handleCopy()}}
-                className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]"><AiTwotoneMail alt="Click To Copy" size="auto" /></motion.a>
+                className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]">
+                    <AiTwotoneMail alt="Click To Copy" size="auto" />
+            </motion.a>
+                
             <motion.a   
                 initial={{opacity:0}}
                 whileHover={{scale:1.1}}

@@ -33,6 +33,7 @@ function Step({props}:{
                 <Image
                     src={props.data.bg}
                     alt="background"
+                    sizes={`${props.w+props.expansion}rem, ${props.w}rem`}
                     fill={true}
                     style={{objectFit: 'cover'}}
                 />
@@ -58,6 +59,7 @@ function Step({props}:{
                 <Image
                     src={props.data.bg}
                     alt="background"
+                    sizes={`${props.w+props.expansion}rem, ${props.w}rem`}
                     fill={true}
                     priority={true}
                     style={{objectFit: 'cover'}}

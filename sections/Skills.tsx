@@ -60,9 +60,6 @@ export default function Skills({scroll: scrollParent}:{scroll: MotionValue<numbe
       unsubscribe();
     }
   })
-  useMotionValueEvent(scrollParent, 'change', (latest) => {
-    console.log(latest);
-  });
   
   return (
       <AnimatePresence>
@@ -80,7 +77,7 @@ export default function Skills({scroll: scrollParent}:{scroll: MotionValue<numbe
                     <div className="flex md:flex-col flex-wrap h-full md:justify-around justify-start md:space-y-10 items-center md:mb-0 mb-[3rem] mt-[1rem]">
                       {
                         frontend.map((skill,index) => (
-                          <div className="block text-secondary-white font-mono lg:text-xl md:text-lg sm:text-md px-2">
+                          <div key={index} className="block text-secondary-white font-mono lg:text-xl md:text-lg sm:text-md px-2">
                           <ScrollTypingText text={skill} start={0.5+index*0.025} end={0.7} scroll={scrollParent} />
                           </div>))
                       }
@@ -93,7 +90,7 @@ export default function Skills({scroll: scrollParent}:{scroll: MotionValue<numbe
                     <div className="flex md:flex-col flex-wrap h-full md:justify-around justify-start md:space-y-10 items-center md:mb-0 mb-[3rem] mt-[1rem]">
                       {
                         backend.map((skill,index) => (
-                          <div className="block text-secondary-white font-mono lg:text-xl md:text-lg sm:text-md px-2">
+                          <div key={index} className="block text-secondary-white font-mono lg:text-xl md:text-lg sm:text-md px-2">
                           <ScrollTypingText text={skill} start={0.5+index*0.025} end={0.7} scroll={scrollParent} />
                           </div>))
                       }
@@ -106,7 +103,7 @@ export default function Skills({scroll: scrollParent}:{scroll: MotionValue<numbe
                     <div className="flex md:flex-col flex-wrap h-full md:justify-around justify-start md:space-y-10 items-center md:mb-0 mb-[3rem] mt-[1rem]">
                       {
                         machinelearning.map((skill,index) => (
-                          <div className="block text-secondary-white font-mono lg:text-xl md:text-lg sm:text-md px-2">
+                          <div key={index} className="block text-secondary-white font-mono lg:text-xl md:text-lg sm:text-md px-2">
                           <ScrollTypingText text={skill} start={0.5+index*0.025} end={0.7} scroll={scrollParent} />
                           </div>))
                       }

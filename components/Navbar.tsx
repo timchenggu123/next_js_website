@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-
+import Image from 'next/image';
 import styles from '../styles';
 import {useState} from 'react';
 import { navVariants, staggerContainer } from '../utils/motion';
@@ -67,9 +67,13 @@ export default function Navbar() {
         </AnimatePresence>
       </div>
       <div className="hover:cursor-pointer hover:scale-125 hover:drop-shadow-[0_0_0.5rem_#ffffff] padding-2 h-14 w-14 p-2">
-        <img src="/menu.svg" 
-            className="h-full w-full"
-            onMouseEnter={() => setIsHovering(true)}
+        <Image src="/menu.svg" 
+          alt="menu"
+          width={48}
+          height={48}
+          style={{objectFit: 'cover'}}
+          className="h-full w-full"
+          onMouseEnter={() => setIsHovering(true)}
         />
       </div>
     </div>
