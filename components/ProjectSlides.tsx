@@ -1,4 +1,3 @@
-'use client'
 import { useScroll } from 'framer-motion'
 import Image from 'next/image'
 import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
@@ -43,8 +42,8 @@ export default function ProjectSlides({index, slides, setKey, containerRef}:{
                                 <Image
                                     src={item.img}
                                     alt="img"
-                                    height={1200}
-                                    width={1200}
+                                    height={500}
+                                    width={500}
                                     style={{objectFit: 'contain'}}
                                 />
                             </div>
