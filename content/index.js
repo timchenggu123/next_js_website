@@ -99,7 +99,7 @@ export const projects = [
     {
         title:"DeepTE",
         institution: "Huawei 2012 Labs",
-        description: "Machine learning based traffic engineering algorithm for large scale networks.",
+        description: "Machine learning-based traffic engineering algorithm for large scale networks.",
         tech: "Python, PyTorch, SK-Learn, Pandas",
         slides: [
             {
