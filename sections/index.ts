@@ -3,6 +3,7 @@ import About from "./About"
 import Journey from "./Journey"
 import Skills from "./Skills"
 import Contact from "./Contact"
+import Projects from "./Projects"
 
 export { 
     About,
@@ -10,4 +11,5 @@ export {
     Journey,
     Skills,
     Contact,
+    Projects,
 }

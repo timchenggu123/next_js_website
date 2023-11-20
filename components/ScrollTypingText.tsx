@@ -1,8 +1,6 @@
 'use client';
 
-import { unsubscribe } from 'diagnostics_channel';
-import { MotionValue, motion } from 'framer-motion';
-import { endianness } from 'os';
+import { MotionValue} from 'framer-motion';
 import { useEffect, useState } from 'react'
 
 export default function ScrollTypingText({

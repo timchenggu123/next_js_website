@@ -1,77 +1,14 @@
 'use client';
 import { motion, stagger } from 'framer-motion';
 import {Steps} from '@/components';
+import {journey} from '@/content';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../styles';
 import { slideIn, staggerContainer, textContainer, textVariant, textVariant2 } from '../utils/motion';
 import CursorBlinker from '@/components/Cursor';
 
-const data = [
-    {
-        date: "2017.1-2017.4", 
-        title: "Frontend Intern", 
-        org: "QingPath Technologies",
-        bg: "/qingpath.jpg"
-    },
-    {
-        date: "2017.9-2017.12", 
-        title: "Engineering Intern", 
-        org: "South Fontenac",
-        bg: "/sf.jpg",
-    },
-    {
-        date: "2018.5-2018.8",
-        title: "Data Analyst Intern",
-        org: "Environment Canada",
-        bg: "/environcan.jpg"
-    },
-    {
-        date: "2020.1-2020.4",
-        title: "Data Engineering Intern",
-        org: "Wayfair",
-        bg: "/wayfair.jpg"
-    },
-    {
-        date: "2020.9-2020.12",
-        title: "Software Engineering Intern",
-        org: "AWS",
-        bg: "/aws.jpg"
-    },
-    {
-        date: "2021.9-2021.12",
-        title: "ML Research Intern",
-        org: "Huawei 2012 Labs",
-        bg: "/huawei.jpg"
-    },
-    {
-        date: "2022.1-2022.8",
-        title: "ML Research Part-time",
-        org: "Huawei 2012 Labs",
-        bg: "/huawei.jpg"
-    },
-    {   
-        date: "2016.9-2022.6", 
-        title: "B.ASC. Comp.Eng.", 
-        org: "University of Waterloo", 
-        bg: "/qnc.jpg"
-    },
-    {
-        date: "2022.9-2024.8",
-        title: "M.ASC Comp.Eng.",
-        org: "University of Toronto",
-        bg: "/uoft.jpg"
-    },
-    {
-        date: "2024.8 - Future",
-        title: "Engineer",
-        org: "Your Company",
-        bg: "/tbd.jpg"
-    }
-
-].reverse();
-
-
+const data = journey.reverse();
 export default function Journey() {
     const [translateX, setTranslateX] = useState('0rem');
     return (
