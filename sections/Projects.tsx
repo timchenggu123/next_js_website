@@ -108,11 +108,11 @@ export default function Projects({sectionRef, contentRefs, sectionScroll, conten
                             <ProjectInfo data={project} id={index}/>
                             {
                                 shows[index].show? 
-                                <div className="h-fit hover:animate-bounce group w-full text-center font-mono text-secondary-white bg-transparent" onClick={() =>{shows[index].setShow(false)}}>
-                                    Hide <div className="inline-block rotate-[90deg] transition-transform">{`->`}</div>
+                                <div className="h-fit hover:animate-bounce group w-full underline text-center font-mono text-secondary-white bg-transparent" onClick={() =>{shows[index].setShow(false)}}>
+                                    Hide<div className="inline-block rotate-[90deg] transition-transform">{`\u00A0->`}</div>
                                 </div>:
-                                <div className="h-fit hover:animate-bounce group w-full text-center font-mono text-secondary-white bg-transparent" onClick={() =>{shows[index].setShow(true)}}>
-                                    Learn More <div className="inline-block group-hover:rotate-[90deg] transition-transform">{`->`}</div>
+                                <div className="h-fit hover:animate-bounce group w-full underline text-center font-mono text-secondary-white bg-transparent" onClick={() =>{shows[index].setShow(true)}}>
+                                    Learn More<div className="inline-block group-hover:rotate-[90deg] transition-transform">{`\u00A0->`}</div>
                                 </div>
                             }
                             {
