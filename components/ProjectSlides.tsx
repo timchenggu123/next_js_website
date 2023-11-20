@@ -7,16 +7,17 @@ export default function ProjectSlides({slides}:{
     }[]
 }) {
   return (
-    <div className='h-fit w-full flex flex-col items-center p-10 pl-20'>
+    <div className='h-fit w-full flex flex-col items-center md:p-10 md:pl-20'>
         {
             slides.map((item, index) => {
                 return (
                     <div key={index} className={`w-full h-fit flex flex-col items-center`}>
-                        <div className='flex flex-row items-between h-fit w-full'>
+                        <div className='flex md:flex-row flex-col items-between h-fit w-full'>
+                            <p className='sm:hidden flex-grow-[50%] text-lg font-mono text-secondary-white p-10'><span className="font-semibold">{`> ${item.title}: `}</span>{`${item.description}`}</p>
                             {
-                                index %2 == 0 ? <p className='flex-grow-[50%] text-lg font-mono text-secondary-white p-10'><span className="font-semibold">{`> ${item.title}: `}</span>{`${item.description}`}</p> :<></>
+                                index %2 == 0 ? <p className='md:block hidden flex-grow-[50%] text-lg font-mono text-secondary-white md:p-10'><span className="font-semibold">{`> ${item.title}: `}</span>{`${item.description}`}</p> :<></>
                             }
-                            <div className="w-[50%] min-w-[50%] h-fit rounded-2xl my-10 bg-secondary-white p-2">
+                            <div className="md:w-[50%] md:min-w-[50%] h-fit rounded-2xl my-10 bg-secondary-white p-2">
                                 <Image
                                     src={item.img}
                                     alt="img"
@@ -26,7 +27,7 @@ export default function ProjectSlides({slides}:{
                                 />
                             </div>
                             {
-                                index %2 == 1 ? <p className='flex-grow-[50%] text-lg font-mono text-secondary-white p-10'><span className="font-semibold">{`> ${item.title}: `}</span>{`${item.description}`}</p> :<></>
+                                index %2 == 1 ? <p className='md:block hidden flex-grow-[50%] text-lg font-mono text-secondary-white p-10'><span className="font-semibold">{`> ${item.title}: `}</span>{`${item.description}`}</p> :<></>
                             }
                         </div>
                     </div>
