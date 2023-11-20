@@ -1,17 +1,17 @@
+'use client'
 import { ProjectInfo } from "@/components"
 import ProjectSlides from "@/components/ProjectSlides"
 import { projects } from "@/content"
-import { textContainer } from "@/utils/motion"
 import {AnimatePresence, MotionValue, motion, useScroll} from "framer-motion"
-import { CSSProperties, MutableRefObject, useEffect, useRef, useState } from "react"
+import { CSSProperties, MutableRefObject, createRef, useEffect, useRef, useState } from "react"
 
 
-export default function Projects({sectionRef, contentRefs, sectionScroll, contentScrolls}:{
+export default function Projects({sectionRef, containerRef, sectionScroll}:{
     sectionRef: MutableRefObject<null>,
-    contentRefs: MutableRefObject<null>[],
+    containerRef: MutableRefObject<null>,
     sectionScroll: MotionValue<number>,
-    contentScrolls: MotionValue<number>[],
 }) {
+
     const fixedStyle: CSSProperties = {
     position: 'fixed',
     }
@@ -28,8 +28,6 @@ export default function Projects({sectionRef, contentRefs, sectionScroll, conten
 
     useEffect(() => {
     const us = sectionScroll.on("change", (latest) => {
-        console.log(hidden);
-        console.log(latest);
         if (latest == 0 || latest == 1){
             setHidden(true);
         }else {
@@ -37,19 +35,8 @@ export default function Projects({sectionRef, contentRefs, sectionScroll, conten
         }
     })
 
-    const uss = contentScrolls.map((val, index) => {
-        const us = val.on("change", (latest) => {
-            if (latest > 0 && latest < 1){
-                setKey(index);
-            }
-        })
-        return us;
-    })
     return () => {
         us();
-        uss.forEach((val) => {
-            val();
-        });
     }
     })
   return (
@@ -83,8 +70,8 @@ export default function Projects({sectionRef, contentRefs, sectionScroll, conten
                     projects.map((project, index) => {
                         return (
                             <div key={index}>
-                                <div ref={contentRefs[index]} className="h-fit w-full min-h-screen bg-transparent">
-                                    <ProjectSlides slides={project.slides}/>
+                                <div className="h-fit w-full min-h-screen bg-transparent">
+                                    <ProjectSlides index={index} slides={project.slides} setKey={setKey} containerRef={containerRef}/>
                                 </div>
                                 <div className="h-screen w-full bg-transparent"/>
                             </div>
@@ -117,8 +104,8 @@ export default function Projects({sectionRef, contentRefs, sectionScroll, conten
                             }
                             {
                                 shows[index].show &&
-                                <div ref={contentRefs[index]} className="h-fit w-full min-h-screen bg-transparent">
-                                    <ProjectSlides slides={project.slides}/>
+                                <div className="h-fit w-full min-h-screen bg-transparent">
+                                    <ProjectSlides index={index} slides={project.slides} setKey={setKey} containerRef={containerRef}/>
                                 </div> 
                             }
                         </motion.div>

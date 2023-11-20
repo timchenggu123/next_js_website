@@ -1,7 +1,6 @@
 'use client'
 import { useScroll } from 'framer-motion';
 import { Navbar } from '../components';
-import { projects } from '@/content';
 import { Hero, About, Journey, Skills, Contact, Projects} from '../sections';
 import React, { useRef } from 'react'
 
@@ -10,15 +9,10 @@ export default function Home() {
   const refAbout = useRef(null);
   const refSkills= useRef(null);
   const refProjects = useRef(null);
-  const refProjectContents = projects.map(() => useRef(null));
 
-  const { scrollYProgress: scrollAbout } = useScroll({container: refContainer, target: refAbout,  offset: ["0.5 1", "1 0.5"]});
-  const { scrollYProgress: scrollSkills } = useScroll({container: refContainer, target: refSkills,  offset: ["0 0.1", "1 1"]});
+  const {scrollYProgress: scrollAbout } = useScroll({container: refContainer, target: refAbout,  offset: ["0.5 1", "1 0.5"]});
+  const {scrollYProgress: scrollSkills } = useScroll({container: refContainer, target: refSkills,  offset: ["0 0.1", "1 1"]});
   const {scrollYProgress: scrollProjects}= useScroll({container: refContainer, target: refProjects, offset: ["0 0.1", "1 1"]});
-  const scrollsProjectContents = refProjectContents.map((val, index) =>{
-      const {scrollYProgress: contentScroll} = useScroll({container: refContainer, target: refProjectContents[index], offset: ["0 0", "1 0"]})
-      return contentScroll;
-  });
 
   return (
     <div ref={refContainer} className=" h-screen overflow-y-scroll overflow-x-hidden bg-primary-black -z-10">
@@ -56,7 +50,7 @@ export default function Home() {
       <div className="block w-screen h-[10rem] bg-transparent"/>
 
       <div id={"projects"} className='h-fit'>
-        <Projects sectionRef={refProjects} sectionScroll={scrollProjects} contentRefs={refProjectContents} contentScrolls={scrollsProjectContents}/>
+        <Projects sectionRef={refProjects} containerRef={refContainer} sectionScroll={scrollProjects}/>
       </div>
 
       {/* Section pad */}

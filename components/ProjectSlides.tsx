@@ -1,13 +1,35 @@
+'use client'
+import { useScroll } from 'framer-motion'
 import Image from 'next/image'
-export default function ProjectSlides({slides}:{
+import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
+
+export default function ProjectSlides({index, slides, setKey, containerRef}:{
+    index: number,
     slides: {
         img: string,
         title: string,
         description: string,
-    }[]
+    }[],
+    setKey: Dispatch<SetStateAction<number>>,
+    containerRef?: React.MutableRefObject<null>,
 }) {
+  const ref = useRef(null);
+  const {scrollYProgress: contentScroll} = useScroll({layoutEffect:false, container: containerRef, target: ref, offset: ["0 0", "1 0"]})
+  
+  useEffect(() => {
+
+    const unsubscribe = contentScroll.on("change", (latest) => {
+        if (latest > 0 && latest < 1) {
+            setKey(index);
+        }
+
+    })
+    return () => {
+      unsubscribe();
+    }
+  })
   return (
-    <div className='h-fit w-full flex flex-col items-center md:p-10 md:pl-20'>
+    <div ref={ref} className='h-fit w-full flex flex-col items-center md:p-10 md:pl-20'>
         {
             slides.map((item, index) => {
                 return (
