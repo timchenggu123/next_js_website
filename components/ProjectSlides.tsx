@@ -51,7 +51,6 @@ export default function ProjectSlides({index, slides, setKey, containerRef}:{
                             {
                                 index %2 == 1 ? <p className='md:block hidden flex-grow-[50%] text-lg font-mono text-secondary-white p-10'><span className="font-semibold">{`> ${item.title}: `}</span>{`${item.description}`}</p> :<></>
                             }
-                            <p className='md:hidden flex-grow-[50%] text-lg font-mono text-secondary-white p-10'><span className="font-semibold">{`> ${item.title}: `}</span>{`${item.description}`}</p>
                         </div>
                     </div>
                 )
