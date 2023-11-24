@@ -163,7 +163,7 @@ const textVariant1={
 }
 function JourneyContent({data}:{data:Journey}){
     return (
-        <div className="flex flex-col justify-between items-center h-full w-full p-2">
+        <div className="flex flex-col justify-between items-center h-full w-full p-2 overflow-scroll">
             <div className='mx-auto w-fit p-10 mt-10'>
                 <motion.h1 variants={textVariant1} initial={"initial"} animate={"animate"} className="text-xl font-mono text-secondary-white text-center">{data.org}</motion.h1>
                 <h1 className="text-lg font-thin text-secondary-white text-center mt-8">{data.title}</h1>
