@@ -249,7 +249,10 @@ const textVariant1={
 }
 function JourneyContent({data}:{data:Journey}){
     return (
-        <div className="flex flex-col justify-between items-center h-full w-full p-2">
+        <div className="flex flex-col justify-between items-center h-full w-full p-2 overflow-scroll">
+            <div className="flex flex-row w-full justify-start pl-3">
+                <h1 className="text-4xl text-md font-mono text-secondary-white text-right">{data.date}</h1>
+            </div>
             <div className='mx-auto w-fit p-10 mt-10'>
                 <motion.h1 variants={textVariant1} initial={"initial"} animate={"animate"} className="text-7xl font-mono text-secondary-white text-center">{data.org}</motion.h1>
                 <h1 className="text-3xl font-thin text-secondary-white text-center mt-8">{data.title}</h1>
@@ -261,9 +264,6 @@ function JourneyContent({data}:{data:Journey}){
                 ))
             }
             {data.skills && <p className='font-mono text-2xl text-secondary-white'><span className="font-bold">Skills: </span>{`${data.skills}`}</p>}
-            </div>
-            <div className="flex flex-row w-full justify-end">
-                <h1 className="text-4xl text-md font-mono text-secondary-white text-right mt-8">{data.date}</h1>
             </div>
         </div>
     )

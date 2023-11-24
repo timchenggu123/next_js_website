@@ -164,7 +164,10 @@ const textVariant1={
 function JourneyContent({data}:{data:Journey}){
     return (
         <div className="flex flex-col justify-between items-center h-full w-full p-2 overflow-scroll">
-            <div className='mx-auto w-fit p-10 mt-10'>
+            <div className="flex flex-row w-full justify-start">
+                <h1 className="text-lg text-md font-mono text-secondary-white text-right mt-2">{data.date}</h1>
+            </div>
+            <div className='mx-auto w-fit p-10 mt-7'>
                 <motion.h1 variants={textVariant1} initial={"initial"} animate={"animate"} className="text-xl font-mono text-secondary-white text-center">{data.org}</motion.h1>
                 <h1 className="text-lg font-thin text-secondary-white text-center mt-8">{data.title}</h1>
             </div>
@@ -175,9 +178,6 @@ function JourneyContent({data}:{data:Journey}){
                 ))
             }
             {data.skills && <p className='font-mono text-md text-secondary-white'>{`Skills: ${data.skills}`}</p>}
-            </div>
-            <div className="flex flex-row w-full justify-end">
-                <h1 className="text-lg text-md font-mono text-secondary-white text-right mt-8">{data.date}</h1>
             </div>
         </div>
     )
