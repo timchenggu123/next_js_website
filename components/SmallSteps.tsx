@@ -174,7 +174,7 @@ function JourneyContent({data}:{data:Journey}){
                     <p key={index} className="font-mono text-sm text-secondary-white my-2">{`> ${item}`}</p>
                 ))
             }
-            {data.skills && <p className='font-mono text-2xl text-secondary-white'>{data.skills}</p>}
+            {data.skills && <p className='font-mono text-md text-secondary-white'>{`Skills: ${data.skills}`}</p>}
             </div>
             <div className="flex flex-row w-full justify-end">
                 <h1 className="text-lg text-md font-mono text-secondary-white text-right mt-8">{data.date}</h1>
