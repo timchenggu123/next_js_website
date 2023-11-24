@@ -10,7 +10,7 @@ export default function ProjectInfo({data, id}:{
 }) {
   return (
     <div className="flex flex-col justify-between items-start md:max-w-[30vw] md:min-w-[30vw] md:h-screen h-full md:p-10">
-        <h1 className="text-4xl font-mono text-secondary-white my-3">{`#0${id}`}</h1>
+        <h1 className="text-4xl font-mono text-secondary-white my-3">{`Project #0${id}`}</h1>
         <div className="h-fit md:ml-10">
             <h1 className="text-4xl font-mono text-secondary-white my-3">{`<${data.title}>`}</h1>
             <h1 className="text-md font-mono text-secondary-white my-3">{`[${data.institution}]`}</h1>

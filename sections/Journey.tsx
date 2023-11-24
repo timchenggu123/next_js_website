@@ -1,11 +1,9 @@
 'use client';
 import { motion, stagger } from 'framer-motion';
-import {Steps} from '@/components';
+import {Steps, SmallSteps} from '@/components';
 import {journey} from '@/content';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import styles from '../styles';
-import { slideIn, staggerContainer, textContainer, textVariant, textVariant2 } from '../utils/motion';
 import CursorBlinker from '@/components/Cursor';
 
 const data = journey.reverse();
@@ -48,7 +46,7 @@ export default function Journey() {
                     transition={{
                         duration: 0.1, 
                     }}
-                    className="relative hover:z-10 z-1 flex justify-start w-full mb-2 p-2">
+                    className="relative z-1 flex justify-start w-full mb-2 p-2">
                     <Steps props={{data: data.slice(0,5), height: 19, width: 13, type: 0, rotation:6}}/>
                 </motion.div>
                 <motion.div 
@@ -58,7 +56,7 @@ export default function Journey() {
                     transition={{
                         duration: 0.1, 
                     }}
-                    className="relative hover:z-10 z-1 flex w-full justify-end p-2">
+                    className="relative z-1 flex w-full justify-end p-2">
                     <Steps props ={{data: data.slice(5,), height: 19, width: 13, type: 1, rotation: 6}}/>
                 </motion.div>
             </div>
@@ -73,7 +71,7 @@ export default function Journey() {
                         duration: 0.2, 
                     }}
                     className="relative hover:z-10 z-1 flex justify-center flex-wrap mx-auto p-2 h-auto">
-                    <Steps props={{data: data, height: 12, width: 10, type: 0, rotation: 0, expansion: 2}}/>
+                    <SmallSteps props={{data: data, height: 12, width: 10, type: 0, rotation: 0, expansion: 2}}/>
                 </motion.div>
             </div>
             

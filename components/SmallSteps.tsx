@@ -17,7 +17,6 @@ function Step({props}:{
         w: number,
         index: number,
         rotation: number,
-        orientation: string,
         expansion: number
         type: 1 | 0,
     }
@@ -55,7 +54,6 @@ function Step({props}:{
             flexShrink: 0.01,
             y:0,
             scale: 1.3,
-            translateY: `${-1*props.type*30}rem`,
             transition: {
                 duration: 0.3,
             }
@@ -63,88 +61,6 @@ function Step({props}:{
     }
     return (
         <>
-        {  
-            props.orientation == "up" ? (
-            <AnimatePresence>
-            {!isOpen ? (<motion.a
-                key={0}
-                style={{
-                    maxWidth: `${props.w}rem`,
-                    maxHeight: `${props.h}rem`,
-                    height: `${props.h}rem`,
-                    width: `${props.w}rem`,
-                    marginBottom: `1rem`,
-                    position: 'relative',
-                    flexGrow: 1,
-                    flexShrink: 1,
-                    zIndex: 10,
-                }}
-                variants={variants}
-                href="#journey"
-                onClick={() => {setIsOpen(!isOpen);}}
-                whileHover={"hover"}
-                transition={{duration: 0.1}}
-                exit={"exit"}
-                className={`shadow-2xl border-8 border-slate-300 m-1 z-2`}
-            >   
-                <Image
-                    src={props.data.bg}
-                    alt="background"
-                    sizes={`${props.w+props.expansion}rem, ${props.w}rem`}
-                    fill={true}
-                    style={{objectFit: 'cover'}}
-                />
-                
-                <div className="flex flex-col justify-between items-center h-full w-full z-3">
-                    <h1 className="relative text-md font-mono text-secondary-white text-center">{props.data.date}</h1>
-                    <div className="h-fit w-full flex-col justify-center items-between z-4 bg-slate-700 bg-opacity-60 backdrop-blur-md p-2">
-                        <h1 className="text-lg font-thin text-secondary-white text-center">{props.data.title}</h1>
-                        <h1 className="text-md font-bold text-secondary-white text-center">{props.data.org}</h1>
-                    </div>
-                </div>  
-
-            </motion.a>)
-            :(
-            <motion.div
-                key={1}
-                style={{
-                    position: "fixed",
-                    inset:0,
-                    width: "100vw",
-                    height: "100vh",
-                    maxWidth: "100vw",
-                    maxHeight: "100vh",
-                    zIndex: 100,}
-                }
-                initial={{scale:0.5, opacity: 0.1}}
-                animate={{scale: 1, opacity:1}}
-                onClick={() => {setIsOpen(!isOpen);}}
-                transition={{duration: 0.2, delay:0.15}}
-                exit={{scale: 0.2, opacity: 0}}
-                className={`border-[20px] border-slate-300 m-1 z-2`}
-                >   
-                <Image
-                    src={props.data.bg}
-                    alt="background"
-                    sizes={`${props.w+props.expansion}rem, ${props.w}rem`}
-                    fill={true}
-                    style={{objectFit: 'cover'}}
-                />
-                <div className="h-full w-full bg-slate-700 bg-opacity-0 backdrop-blur-md">
-                    <motion.div
-                        className="h-full w-full"
-                        initial={{opacity:0, y:-20}}
-                        animate={{opacity:1, y:0}}
-                        transition={{duration:0.4, delay:0.4}}
-                    >
-                        <JourneyContent data={props.data}/>
-                    </motion.div>
-                </div>
-            </motion.div>)
-            }
-            </AnimatePresence>) 
-            : 
-            (
             <AnimatePresence>
             {!isOpen ? (<motion.a
                 key={0}
@@ -165,7 +81,6 @@ function Step({props}:{
                 onClick={() => {setIsOpen(!isOpen);}}
                 whileHover={"hover"}
                 transition={{duration: 0.1}}
-                exit={"exit"}
                 className={`shadow-2xl border-8 border-slate-300 m-1 z-2`}
             >   
                 <Image
@@ -223,8 +138,7 @@ function Step({props}:{
                 </div>
             </motion.div>)
             }
-            </AnimatePresence>) 
-        }
+            </AnimatePresence>
         </>
     )
 }
@@ -251,19 +165,19 @@ function JourneyContent({data}:{data:Journey}){
     return (
         <div className="flex flex-col justify-between items-center h-full w-full p-2">
             <div className='mx-auto w-fit p-10 mt-10'>
-                <motion.h1 variants={textVariant1} initial={"initial"} animate={"animate"} className="text-7xl font-mono text-secondary-white text-center">{data.org}</motion.h1>
-                <h1 className="text-3xl font-thin text-secondary-white text-center mt-8">{data.title}</h1>
+                <motion.h1 variants={textVariant1} initial={"initial"} animate={"animate"} className="text-xl font-mono text-secondary-white text-center">{data.org}</motion.h1>
+                <h1 className="text-lg font-thin text-secondary-white text-center mt-8">{data.title}</h1>
             </div>
-            <div className="flex-grow flex flex-col w-full max-w-[70rem] rounded-lg justify-center items-start bg-slate-700 bg-opacity-0 backdrop-blur-xl drop-shadow-2xl p-16">
+            <div className="flex-grow flex flex-col w-full max-w-[70rem] rounded-lg justify-center items-start bg-slate-700 bg-opacity-0 backdrop-blur-xl drop-shadow-2xl px-16">
             {
                 data.bullets && data.bullets.map((item:string, index:number) =>(
-                    <p key={index} className="font-mono text-xl text-secondary-white my-5">{`> ${item}`}</p>
+                    <p key={index} className="font-mono text-sm text-secondary-white my-2">{`> ${item}`}</p>
                 ))
             }
-            {data.skills && <p className='font-mono text-2xl text-secondary-white'><span className="font-bold">Skills: </span>{`${data.skills}`}</p>}
+            {data.skills && <p className='font-mono text-2xl text-secondary-white'>{data.skills}</p>}
             </div>
             <div className="flex flex-row w-full justify-end">
-                <h1 className="text-4xl text-md font-mono text-secondary-white text-right mt-8">{data.date}</h1>
+                <h1 className="text-lg text-md font-mono text-secondary-white text-right mt-8">{data.date}</h1>
             </div>
         </div>
     )
@@ -292,7 +206,6 @@ export default function Steps({props}:{
                         h: props.height,
                         index: index,
                         rotation: rotation,
-                        orientation: (index+props.type)%2 == 0 ? "up":"down",
                         expansion: expansion,
                         type:props.type,
                     };

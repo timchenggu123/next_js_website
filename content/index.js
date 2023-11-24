@@ -3,61 +3,123 @@ export const journey = [
         date: "2017.1-2017.4", 
         title: "Frontend Intern", 
         org: "QingPath Technologies",
-        bg: "/qingpath.jpg"
+        bg: "/qingpath.jpg",
+        bullets: [
+            "Assisted in Agile Web Development using Html, JavaScript, and CSS",
+            "Created Work Progress Reports",
+            "Collected and documented Customer Feedbacks",
+        ],
+        skills: "HTML · CSS · JavaScript · Bootstrap"
     },
     {
         date: "2017.9-2017.12", 
         title: "Engineering Intern", 
         org: "South Fontenac",
         bg: "/sf.jpg",
+        bullets:[
+            "Helped the township build a traffic data management and visualization tool in native Excel, using custom VBA and JavaScript. Includes a interactive map visualization module created using GoogleMaps API",
+            "Produced various engineering design drafts and drafts",
+            "Assisted the engineers in the township's public works office with drafting project proposals",
+            "Supervised various contractor projects in the township including constructions and roadwork."
+        ],
+        skills:"VisualLisp · VBA · JavaScript"
     },
     {
         date: "2018.5-2018.8",
         title: "Data Analyst Intern",
         org: "Environment Canada",
-        bg: "/environcan.jpg"
+        bg: "/environcan.jpg",
+        bullets:[
+            "Analyzed PM 2.5 data between 2003 and 2017 using R and MatLab. Result presented at August 2018 NAPS lab managers meeting.", 
+            "Manged NAPS SQLServer database. Created data pipelines and validated large volume of lab data both programmatically and mnaully, using a combination of SQL, MatLab, VBA, and R.",
+            "Created custom softwares using MatLab and R as requested by the supervising engineer.",
+            "Designed a new version NAPS lab information management system using VBA and Microsoft Access.",
+        ],
+        skills: "MATLAB · VBA · Python · R"
     },
     {
         date: "2020.1-2020.4",
         title: "Data Engineering Intern",
         org: "Wayfair",
-        bg: "/wayfair.jpg"
+        bg: "/wayfair.jpg",
+        bullets:[
+            "Created internal automatic data model verification pipelines, accelerating data verification process by up to 400× using the latest technologies in Python and R.",
+            "Created and managed internal data delivery pipelines between multiple data storage solutions implemented with MySQL, PostgreSQL, VerticaSQL, Microsoft Access, and Google Cloud Platform.",
+          ],
+        skills: "MySQL · Google Cloud Platform (GCP) · VerticaSQL · Microsoft Access · SQL · NoSQL · Python · R"
     },
     {
         date: "2020.9-2020.12",
         title: "Software Engineering Intern",
         org: "AWS",
-        bg: "/aws.jpg"
+        bg: "/aws.jpg",
+        bullets:[
+            "Designed and implemented multiple core business metric pipelines as part of AWS Cloud Formation, driving multi-billion dollar business decisions with cutting-edge technologies of Kotlin, Java, AWS EC2, AWS DynamoDB, AWS Athena.",
+            "Hosted and led design meetings with the AWS Cloud Formation team for software architecture design and integration strategies.",
+            "Managed and deployed software feature to 21 AWS regions and created key maintenance pipelines with Ruby."
+          ],
+        skills: "Amazon EC2 · Amazon Dynamodb · AWS CloudFormation · AWS Identity and Access Management (AWS IAM) · AWS Athena · NoSQL · Kotlin · Cloud · Ruby · AWS · Apache Spark · Python · Java · JavaScript"
     },
     {
         date: "2021.9-2021.12",
         title: "ML Research Intern",
         org: "Huawei 2012 Labs",
-        bg: "/huawei.jpg"
+        bg: "/huawei.jpg",
+        bullets: [
+            "Lead the design and implementation of a GNN/transformer-based regression model for approximating the solutions for NP-hard multi-commodity-flow problems. The model yields solutions within 95% of the theoretical optimum and is between 100-10000× faster than traditional algorithms. Python, PyTorch, PyTorch Geometrics.",
+            "Engineered distributed ML pipelines for training and inference that accommodate 30-billion-parameter models among up to 4 Nvidia V100 GPUs with PyTorch Distributed.",
+            "Built and deployed multiple data pipelines using Numpy and Pandas."
+          ],
+        skills: "Distributed Systems · Computer Networking · Large-scale Data Analysis · Large Scale Systems · Large-scale Projects · Linear Programming · PyTorch · Deep Learning · Machine Learning · Transformer · GNN · Python"
+
     },
     {
         date: "2022.1-2022.8",
         title: "ML Research Part-time",
         org: "Huawei 2012 Labs",
-        bg: "/huawei.jpg"
+        bg: "/huawei.jpg",
+        bullets: [
+            "Lead the design and implementation of a GNN/transformer-based regression model for approximating the solutions for NP-hard multi-commodity-flow problems. The model yields solutions within 95% of the theoretical optimum and is between 100-10000× faster than traditional algorithms. Python, PyTorch, PyTorch Geometrics.",
+            "Engineered distributed ML pipelines for training and inference that accommodate 30-billion-parameter models among up to 4 Nvidia V100 GPUs with PyTorch Distributed.",
+            "Built and deployed multiple data pipelines using Numpy and Pandas."
+          ],
+        skills: "Distributed Systems · Computer Networking · Large-scale Data Analysis · Large Scale Systems · Large-scale Projects · Linear Programming · PyTorch · Deep Learning · Machine Learning · Transformer · GNN · Python"
     },
     {   
         date: "2016.9-2022.6", 
         title: "B.ASC. Comp.Eng.", 
         org: "University of Waterloo", 
-        bg: "/qnc.jpg"
+        bg: "/qnc.jpg",
+        bullets:[
+            "Cumulative Grade Point Average: 84.3%",
+            "Capstone Project: DeepPen, an web app capable of automatically benchmarking adversarial ML attack algorithms against a large array of standardized datasets and models.",
+            "Software lead of Waterloo Concrete Canoe Team. Created a custom software for streamlined paramterized design with Grasshopper, python, and VBA.",
+            "Project lead of FlowAI, a productivity desktop software capable of generating excel statics and charts based on live speech. Winner at 2019 Hack the North",
+            "Project lead of SaveMI, an android app capable of recognizing potential allergy sources from food based on photos. Winner at 2019 Eng Hack",
+        ]
     },
     {
         date: "2022.9-2024.8",
         title: "M.ASC Comp.Eng.",
         org: "University of Toronto",
-        bg: "/uoft.jpg"
+        bg: "/uoft.jpg",
+        bullets:[
+            "Grade Point Average: 4.0",
+            "Research Focus: Developing High-speed inter-cloud data transportation layer for accelerating distributed machine learning (Paper under review).",
+        ],
+        skills: "PyTorch · Rust · JavaScript · Python · Horovod · DeepSpeed · OpenMPI · NCCL"
     },
     {
         date: "2024.8 - Future",
         title: "Engineer",
         org: "Your Company",
-        bg: "/tbd.jpg"
+        bg: "/tbd.svg",
+        bullets:[
+            "Be the front end engineer, building visually stunning websites complete with clean animations, optimized with the latest Next.js features.",
+            "Be the back end engineer, creating blazing fast servers using Rust, Javascript, Python. Containerize the server with Docker and Kubernetes. Deploy and maintain your apps in the AWS Cloud.",
+            "Be your data engineer, building efficient and secure data pipelines using SQL or no SQL.",
+            "Be you local machine learning expert, empower your app with fine-tuned LLM models, or build and train a custom model from scratch using PyTorch."
+        ]
     }
 ]
 

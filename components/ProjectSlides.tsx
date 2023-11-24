@@ -38,7 +38,7 @@ export default function ProjectSlides({index, slides, setKey, containerRef}:{
                             {
                                 index %2 == 0 ? <p className='md:block hidden flex-grow-[50%] text-lg font-mono text-secondary-white md:p-10'><span className="font-semibold">{`> ${item.title}: `}</span>{`${item.description}`}</p> :<></>
                             }
-                            <div className="md:w-[50%] md:min-w-[50%] h-fit rounded-2xl my-10 bg-secondary-white p-2">
+                            <div className="md:w-[50%] md:min-w-[50%] h-fit border-8 border-slate-400 my-10 bg-secondary-white p-2">
                                 <Image
                                     src={item.img}
                                     alt="img"

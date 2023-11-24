@@ -1,5 +1,4 @@
 'use client';
-
 import { Aboutimg } from '@/components';
 import CursorBlinker from '@/components/Cursor';
 import { MotionValue, useMotionValueEvent, useScroll } from 'framer-motion';

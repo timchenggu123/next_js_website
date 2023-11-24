@@ -6,30 +6,27 @@ import { CSSProperties, useEffect, useRef, useState } from "react"
 const frontend = [
   "Next.js",
   "React",
+  "Node.js",
   "TailwindCSS",
   "Framer Motion",
   "TypeScript",
-  "JavaScript",
-  "Node.js",
-  "CSS",
+  "Html/CSS",
 ]
 
 const backend=[
   "Rust",
   "Java/Kotlin",
-  "PostgresSQL",
-  "MySQL",
-  "Django",
-  "MongoDB",
-  "AWS",
-  "Digital Ocean"
+  "Ruby on Rails",
+  "Docker/Kubernetes",
+  "PostgresSQL/MySQL",
+  "MangoDB",
+  "AWS Suite",
 ]
 
 const machinelearning=[
   "Python",
   "PyTorch",
   "SK-Learn",
-  "Pandas",
   "HuggingFace",
   "NCCL",
   "DeepSpeed",
