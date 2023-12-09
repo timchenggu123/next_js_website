@@ -47,7 +47,7 @@ export default function Contact() {
                 href="https://github.com/timchenggu123"
                 target="_blank"
                 className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]">
-                    <AiFillGithub size="auto"/>
+                    <AiFillGithub color="black" size="auto"/>
             </motion.a>
             <motion.a 
                 initial={{opacity:0}}
@@ -56,7 +56,7 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/tim-chenggu/"
                 target="_blank"
                 className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]">
-                    <AiFillLinkedin size="auto"/>
+                    <AiFillLinkedin color="black" size="auto"/>
             </motion.a>
             <motion.a   
                 initial={{opacity:0}}
@@ -64,7 +64,7 @@ export default function Contact() {
                 whileInView={{opacity:1}}
                 onClick={() => {handleCopy()}}
                 className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]">
-                    <AiTwotoneMail alt="Click To Copy" size="auto" />
+                    <AiTwotoneMail color="black" alt="Click To Copy" size="auto" />
             </motion.a>
                 
             <motion.a   
@@ -74,7 +74,7 @@ export default function Contact() {
                 href="/cv.pdf"
                 download={true}
                 className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]">
-                    <Image src="/cv.svg" alt="Click To Download" width={400} height={400}/>
+                    <Image src="/cv.svg" color="black" alt="Click To Download" width={400} height={400}/>
                 </motion.a>
             
         </div>

@@ -5,6 +5,7 @@ import Steps from "./Steps";
 import ProjectInfo from './ProjectInfo';
 import ScrollTypingText from './ScrollTypingText';
 import SmallSteps from './SmallSteps';
+import Timeline from './Timeline';
 
 export {
   Aboutimg,
@@ -14,4 +15,5 @@ export {
   ScrollTypingText,
   ProjectInfo,
   SmallSteps,
+  Timeline,
 };

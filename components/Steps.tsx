@@ -1,7 +1,6 @@
-import React, { use, useEffect, useRef, useState } from 'react'
+import React, {useRef, useState } from 'react'
 import {AnimatePresence, motion} from 'framer-motion';
 import Image from 'next/image';
-import { type } from 'os';
 type Journey =  {
     date: string,
     title: string,
@@ -42,31 +41,13 @@ function Step({props}:{
             transition:{
                 duration: 0.1,
             }
-        },
-        exit:{
-            zIndex: 20, 
-            maxWidth: `100Vw`, 
-            maxHeight: `100Vh`,
-            height: `200Vh`,
-            width: `70Vw`,
-            opacity: 0.3,
-            // rotate: `360deg`, 
-            rotate:"0deg",
-            flexShrink: 0.01,
-            y:0,
-            scale: 1.3,
-            translateY: `${-1*props.type*30}rem`,
-            transition: {
-                duration: 0.3,
-            }
         }
     }
     return (
         <>
         {  
             props.orientation == "up" ? (
-            <AnimatePresence>
-            {!isOpen ? (<motion.a
+            <motion.a
                 key={0}
                 style={{
                     maxWidth: `${props.w}rem`,
@@ -103,50 +84,9 @@ function Step({props}:{
                     </div>
                 </div>  
 
-            </motion.a>)
-            :(
-            <motion.div
-                key={1}
-                style={{
-                    position: "fixed",
-                    inset:0,
-                    width: "100vw",
-                    height: "100vh",
-                    maxWidth: "100vw",
-                    maxHeight: "100vh",
-                    zIndex: 100,}
-                }
-                initial={{scale:0.5, opacity: 0.1}}
-                animate={{scale: 1, opacity:1}}
-                onClick={() => {setIsOpen(!isOpen);}}
-                transition={{duration: 0.2, delay:0.15}}
-                exit={{scale: 0.2, opacity: 0}}
-                className={`border-[20px] border-slate-300 m-1 z-2`}
-                >   
-                <Image
-                    src={props.data.bg}
-                    alt="background"
-                    sizes={`${props.w+props.expansion}rem, ${props.w}rem`}
-                    fill={true}
-                    style={{objectFit: 'cover'}}
-                />
-                <div className="h-full w-full bg-slate-700 bg-opacity-0 backdrop-blur-md">
-                    <motion.div
-                        className="h-full w-full"
-                        initial={{opacity:0, y:-20}}
-                        animate={{opacity:1, y:0}}
-                        transition={{duration:0.4, delay:0.4}}
-                    >
-                        <JourneyContent data={props.data}/>
-                    </motion.div>
-                </div>
-            </motion.div>)
-            }
-            </AnimatePresence>) 
-            : 
-            (
-            <AnimatePresence>
-            {!isOpen ? (<motion.a
+            </motion.a>
+            ) : (
+            <motion.a
                 key={0}
                 style={{
                     maxWidth: `${props.w}rem`,
@@ -155,14 +95,11 @@ function Step({props}:{
                     width: `${props.w}rem`,
                     marginBottom: `1rem`,
                     position: 'relative',
-                    rotate: `${props.rotation}deg`,
                     flexGrow: 1,
                     flexShrink: 1,
                     zIndex: 10,
                 }}
                 variants={variants}
-                href="#journey"
-                onClick={() => {setIsOpen(!isOpen);}}
                 whileHover={"hover"}
                 transition={{duration: 0.1}}
                 exit={"exit"}
@@ -183,91 +120,52 @@ function Step({props}:{
                     </div>
                     <h1 className="relative text-md font-mono text-secondary-white text-center">{props.data.date}</h1>
                 </div>  
-
-            </motion.a>)
-            :(
-            <motion.div
-                key={1}
-                style={{
-                    position: "fixed",
-                    inset:0,
-                    width: "100vw",
-                    height: "100vh",
-                    maxWidth: "100vw",
-                    maxHeight: "100vh",
-                    zIndex: 100,}
-                }
-                initial={{scale:0.5, opacity: 0.1}}
-                animate={{scale: 1, opacity:1}}
-                onClick={() => {setIsOpen(!isOpen);}}
-                transition={{duration: 0.2, delay:0.1}}
-                exit={{scale: 0.2, opacity: 0}}
-                className={`border-[20px] border-slate-300 m-1 z-2`}
-                >   
-                <Image
-                    src={props.data.bg}
-                    alt="background"
-                    sizes={`${props.w+props.expansion}rem, ${props.w}rem`}
-                    fill={true}
-                    style={{objectFit: 'cover'}}
-                />
-                <div className="h-full w-full bg-slate-700 bg-opacity-0 backdrop-blur-md">
-                    <motion.div
-                        className="h-full w-full"
-                        initial={{opacity:0, y:-20}}
-                        animate={{opacity:1, y:0}}
-                        transition={{duration:0.4, delay:0.4}}
-                    >
-                        <JourneyContent data={props.data}/>
-                    </motion.div>
-                </div>
-            </motion.div>)
-            }
-            </AnimatePresence>) 
+            </motion.a>
+            ) 
         }
         </>
     )
 }
 
-const textVariant1={
-    initial:{
-        y: "-10rem",
-        opacity: 0,
-    },
-    animate:{
-        opacity: 1,
-        y: 0,
-        transition:{
-            duration: 1.0,
-            spring:{
-                stiffness: 100,
-                damping: 30,
-                restDelta: 0.001
-            }
-        }
-    }
-}
-function JourneyContent({data}:{data:Journey}){
-    return (
-        <div className="flex flex-col justify-between items-center h-full w-full p-2 overflow-scroll">
-            <div className="flex flex-row w-full justify-start pl-3">
-                <h1 className="text-4xl text-md font-mono text-secondary-white text-right">{data.date}</h1>
-            </div>
-            <div className='mx-auto w-fit p-10 mt-10'>
-                <motion.h1 variants={textVariant1} initial={"initial"} animate={"animate"} className="text-7xl font-mono text-secondary-white text-center">{data.org}</motion.h1>
-                <h1 className="text-3xl font-thin text-secondary-white text-center mt-8">{data.title}</h1>
-            </div>
-            <div className="flex-grow flex flex-col w-full max-w-[70rem] rounded-lg justify-center items-start bg-slate-700 bg-opacity-0 backdrop-blur-xl drop-shadow-2xl p-16">
-            {
-                data.bullets && data.bullets.map((item:string, index:number) =>(
-                    <p key={index} className="font-mono text-xl text-secondary-white my-5">{`> ${item}`}</p>
-                ))
-            }
-            {data.skills && <p className='font-mono text-2xl text-secondary-white'><span className="font-bold">Skills: </span>{`${data.skills}`}</p>}
-            </div>
-        </div>
-    )
-}
+// const textVariant1={
+//     initial:{
+//         y: "-10rem",
+//         opacity: 0,
+//     },
+//     animate:{
+//         opacity: 1,
+//         y: 0,
+//         transition:{
+//             duration: 1.0,
+//             spring:{
+//                 stiffness: 100,
+//                 damping: 30,
+//                 restDelta: 0.001
+//             }
+//         }
+//     }
+// }
+// function JourneyContent({data}:{data:Journey}){
+//     return (
+//         <div className="flex flex-col justify-between items-center h-full w-full p-2 overflow-scroll">
+//             <div className="flex flex-row w-full justify-start pl-3">
+//                 <h1 className="text-4xl text-md font-mono text-secondary-white text-right">{data.date}</h1>
+//             </div>
+//             <div className='mx-auto w-fit p-10 mt-10'>
+//                 <motion.h1 variants={textVariant1} initial={"initial"} animate={"animate"} className="text-7xl font-mono text-secondary-white text-center">{data.org}</motion.h1>
+//                 <h1 className="text-3xl font-thin text-secondary-white text-center mt-8">{data.title}</h1>
+//             </div>
+//             <div className="flex-grow flex flex-col w-full max-w-[70rem] rounded-lg justify-center items-start bg-slate-700 bg-opacity-0 backdrop-blur-xl drop-shadow-2xl p-16">
+//             {
+//                 data.bullets && data.bullets.map((item:string, index:number) =>(
+//                     <p key={index} className="font-mono text-xl text-secondary-white my-5">{`> ${item}`}</p>
+//                 ))
+//             }
+//             {data.skills && <p className='font-mono text-2xl text-secondary-white'><span className="font-bold">Skills: </span>{`${data.skills}`}</p>}
+//             </div>
+//         </div>
+//     )
+// }
 
 export default function Steps({props}:{
     props:{

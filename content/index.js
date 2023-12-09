@@ -9,7 +9,7 @@ export const journey = [
             "Created Work Progress Reports",
             "Collected and documented Customer Feedbacks",
         ],
-        skills: "HTML · CSS · JavaScript · Bootstrap"
+        skills: "HTML · CSS · JavaScript"
     },
     {
         date: "2017.9-2017.12", 
@@ -46,7 +46,7 @@ export const journey = [
             "Created internal automatic data model verification pipelines, accelerating data verification process by up to 400× using the latest technologies in Python and R.",
             "Created and managed internal data delivery pipelines between multiple data storage solutions implemented with MySQL, PostgreSQL, VerticaSQL, Microsoft Access, and Google Cloud Platform.",
           ],
-        skills: "MySQL · Google Cloud Platform (GCP) · VerticaSQL · Microsoft Access · SQL · NoSQL · Python · R"
+        skills: "SQL · NoSQL · Python · R"
     },
     {
         date: "2020.9-2020.12",
@@ -61,7 +61,7 @@ export const journey = [
         skills: "Amazon EC2 · Amazon Dynamodb · AWS CloudFormation · AWS Identity and Access Management (AWS IAM) · AWS Athena · NoSQL · Kotlin · Cloud · Ruby · AWS · Apache Spark · Python · Java · JavaScript"
     },
     {
-        date: "2021.9-2021.12",
+        date: "2021.9-2022.8",
         title: "ML Research Intern",
         org: "Huawei 2012 Labs",
         bg: "/huawei.jpg",
@@ -70,20 +70,8 @@ export const journey = [
             "Engineered distributed ML pipelines for training and inference that accommodate 30-billion-parameter models among up to 4 Nvidia V100 GPUs with PyTorch Distributed.",
             "Built and deployed multiple data pipelines using Numpy and Pandas."
           ],
-        skills: "Distributed Systems · Computer Networking · Large-scale Data Analysis · Large Scale Systems · Large-scale Projects · Linear Programming · PyTorch · Deep Learning · Machine Learning · Transformer · GNN · Python"
+        skills: "PyTorch · Machine Learning · Transformer · GNN"
 
-    },
-    {
-        date: "2022.1-2022.8",
-        title: "ML Research Part-time",
-        org: "Huawei 2012 Labs",
-        bg: "/huawei.jpg",
-        bullets: [
-            "Lead the design and implementation of a GNN/transformer-based regression model for approximating the solutions for NP-hard multi-commodity-flow problems. The model yields solutions within 95% of the theoretical optimum and is between 100-10000× faster than traditional algorithms. Python, PyTorch, PyTorch Geometrics.",
-            "Engineered distributed ML pipelines for training and inference that accommodate 30-billion-parameter models among up to 4 Nvidia V100 GPUs with PyTorch Distributed.",
-            "Built and deployed multiple data pipelines using Numpy and Pandas."
-          ],
-        skills: "Distributed Systems · Computer Networking · Large-scale Data Analysis · Large Scale Systems · Large-scale Projects · Linear Programming · PyTorch · Deep Learning · Machine Learning · Transformer · GNN · Python"
     },
     {   
         date: "2016.9-2022.6", 
@@ -107,7 +95,7 @@ export const journey = [
             "Grade Point Average: 4.0",
             "Research Focus: Developing High-speed inter-cloud data transportation layer for accelerating distributed machine learning (Paper under review).",
         ],
-        skills: "PyTorch · Rust · JavaScript · Python · Horovod · DeepSpeed · OpenMPI · NCCL"
+        skills: "PyTorch · Rust · JavaScript · DeepSpeed"
     },
     {
         date: "2024.8 - Future",
@@ -115,10 +103,10 @@ export const journey = [
         org: "Your Company",
         bg: "/tbd.svg",
         bullets:[
-            "Be the front end engineer, building visually stunning websites complete with clean animations, optimized with the latest Next.js features.",
-            "Be the back end engineer, creating blazing fast servers using Rust, Javascript, Python. Containerize the server with Docker and Kubernetes. Deploy and maintain your apps in the AWS Cloud.",
-            "Be your data engineer, building efficient and secure data pipelines using SQL or no SQL.",
-            "Be you local machine learning expert, empower your app with fine-tuned LLM models, or build and train a custom model from scratch using PyTorch."
+            "Building visually stunning websites complete with clean animations, optimized with the latest Next.js features.",
+            "Creating fast servers using Rust, Javascript, Python. Containerize the server with Docker and Kubernetes. Deploy and maintain your apps in the AWS Cloud.",
+            "Building efficient and secure data pipelines using SQL or no SQL.",
+            "Wmpower your app with fine-tuned LLM models, or build and train a custom model from scratch using PyTorch."
         ]
     }
 ]
