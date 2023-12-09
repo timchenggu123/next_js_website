@@ -32,7 +32,7 @@ export default function Timeline({journey}:{journey: Journey[]}) {
                     style={{objectFit: 'cover'}}
                 />
                 <div className='h-full w-full flex flex-col justify-end items-end p-3 relative z-1'>
-                    <div className="group-hover:flex hidden h-full flex-col justify-start items-center">
+                    <div className="flex transition-all scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100 h-full flex-col justify-start items-center">
                         <div className="text-secondary-white text-3xl font-mono font-bold w-full text-justify-left px-10 py-5">
                             {`${data.title}`}
                         </div>
@@ -74,7 +74,7 @@ export default function Timeline({journey}:{journey: Journey[]}) {
                     style={{objectFit: 'cover'}}
                 />
                 <div className='h-full w-full flex flex-col justify-end items-end p-3 relative z-1'>
-                    <div className="group-hover:flex hidden h-full flex-col justify-start items-center">
+                    <div className="flex transition-all scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100 h-full flex-col justify-start items-center">
                         <div className="text-secondary-white text-3xl font-mono font-bold w-full text-justify-left px-10 py-5">
                             {`${data.title}`}
                         </div>
