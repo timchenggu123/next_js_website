@@ -5,9 +5,9 @@ export const journey = [
         org: "QingPath Technologies",
         bg: "/qingpath.jpg",
         bullets: [
-            "Assisted in Agile Web Development using Html, JavaScript, and CSS",
-            "Created Work Progress Reports",
-            "Collected and documented Customer Feedbacks",
+            "Assisted in Agile Web Development using Html, JavaScript, and CSS.",
+            "Created Work Progress Reports.",
+            "Collected and documented Customer Feedbacks.",
         ],
         skills: "HTML · CSS · JavaScript"
     },
@@ -17,9 +17,9 @@ export const journey = [
         org: "South Fontenac",
         bg: "/sf.jpg",
         bullets:[
-            "Helped the township build a traffic data management and visualization tool in native Excel, using custom VBA and JavaScript. Includes a interactive map visualization module created using GoogleMaps API",
-            "Produced various engineering design drafts and drafts",
-            "Assisted the engineers in the township's public works office with drafting project proposals",
+            "Helped the township build a traffic data management and visualization tool in native Excel, using custom VBA and JavaScript. Includes a interactive map visualization module created using GoogleMaps API.",
+            "Produced various engineering design drafts and drafts.",
+            "Assisted the engineers in the township's public works office with drafting project proposals.",
             "Supervised various contractor projects in the township including constructions and roadwork."
         ],
         skills:"VisualLisp · VBA · JavaScript"
@@ -82,8 +82,8 @@ export const journey = [
             "Cumulative Grade Point Average: 84.3%",
             "Capstone Project: DeepPen, an web app capable of automatically benchmarking adversarial ML attack algorithms against a large array of standardized datasets and models.",
             "Software lead of Waterloo Concrete Canoe Team. Created a custom software for streamlined paramterized design with Grasshopper, python, and VBA.",
-            "Project lead of FlowAI, a productivity desktop software capable of generating excel statics and charts based on live speech. Winner at 2019 Hack the North",
-            "Project lead of SaveMI, an android app capable of recognizing potential allergy sources from food based on photos. Winner at 2019 Eng Hack",
+            "Project lead of FlowAI, a productivity desktop software capable of generating excel statics and charts based on live speech. Winner at 2019 Hack the North.",
+            "Project lead of SaveMI, an android app capable of recognizing potential allergy sources from food based on photos. Winner at 2019 Eng Hack.",
         ]
     },
     {
