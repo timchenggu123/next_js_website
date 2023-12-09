@@ -225,7 +225,7 @@ export const projects = [
     {
         title:"CloudFormation BI",
         institution: "Amazon Web Services",
-        description: "Business Intelligence pipelines for tracking usage of new software feature released for ClouFormation.",
+        description: "Business Intelligence pipelines for tracking usage of new software feature released for CloudFormation.",
         tech: "Java, Kotlin, AWS, Ruby, DynamoDB, Spark",
         slides: [
             {
