@@ -47,6 +47,20 @@ function TypingChar({char, index, len, start, end, scroll}:
             unsubscribe();
         }
     })
+    if (char == " ") {
+        return (
+            <>
+            {show && (
+                <span
+                style={{display: show}}
+                className={`inline-block`}
+                >
+                &nbsp;
+                </span>
+            )}
+            </>
+        )
+    }
     return (
         <>
         {show && (
