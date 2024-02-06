@@ -119,28 +119,28 @@ export const projects = [
     //     tech: "Next.js, React, TailwindCSS, Framer Motion, TypeScript",
     // },
     {
-        title: "Strato",
+        title: "Atmos",
         institution: "M.ASC Research @ University of Toronto",
         description: "Rust-powered, software defined application space overlay network for speeding up inter-DC ML.",
         tech: "Rust, TypeScript, PostgresSQL, Docker",
         slides: [
             {
-                img: "/strato/strato.svg",
+                img: "/atmos/atmos.svg",
                 title:"Motivation",
                 description: "Accelerating collaborative ML training across multiple geo-distributed data centers or cloud services without requiring data to be shared.",
             },
             {
-                img: "/strato/strato1.svg",
+                img: "/atmos/atmos1.svg",
                 title:"Core Design",
-                description: "Strato is software defined, consisting of a centralized controller and an array of nodes which collectively form an overlay network.",
+                description: "Atomos is software defined, consisting of a centralized controller and an array of nodes which collectively form an overlay network.",
             },
             {
-                img: "/strato/strato2.svg",
+                img: "/atmos/atmos2.svg",
                 title:"Controller",
                 description: "Powered by TypeScript and PostgresSQL, the controller is capable of actively monitoring network performance and dynamically install routes for flow granularity through a database-oriented API.",
             },
             {
-                img: "/strato/strato3.svg",
+                img: "/atmos/atmos3.svg",
                 title:"Node",
                 description: "Powered by Rust's powerful tokio runtime, the node is capable of forwarding packets through parallel routes concurrently at Gbps throughput using multiple cores.",
             } 

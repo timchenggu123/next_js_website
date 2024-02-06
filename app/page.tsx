@@ -28,7 +28,11 @@ export default function Home() {
       <div ref={refAbout}>
         <About scroll={scrollAbout}/>
       </div>
-      
+
+      <div id={"journey"} className='h-fit'>
+        <Journey/>
+      </div>
+
       {/* Section pad */}
       <div className="block w-screen h-[10rem] bg-transparent"/>
 
@@ -40,10 +44,6 @@ export default function Home() {
           </div>
           
         </div>
-      </div>
-
-      <div id={"journey"} className='h-fit'>
-        <Journey/>
       </div>
 
       {/* Section pad */}
