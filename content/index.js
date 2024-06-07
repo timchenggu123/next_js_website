@@ -119,30 +119,30 @@ export const projects = [
     //     tech: "Next.js, React, TailwindCSS, Framer Motion, TypeScript",
     // },
     {
-        title: "Atmos",
+        title: "Strato",
         institution: "M.ASC Research @ University of Toronto",
         description: "Rust-powered, software defined application space overlay network for speeding up inter-DC ML.",
         tech: "Rust, TypeScript, PostgresSQL, Docker",
         slides: [
             {
-                img: "/atmos/atmos.svg",
+                img: "/strato/strato.png",
                 title:"Motivation",
-                description: "Accelerating collaborative ML training across multiple geo-distributed data centers or cloud services without requiring data to be shared.",
+                description: "Distributed Machine Learning across the Internet is critical for training models with private and sensitive data. However, the slow speed of wide-area-network poses a bottleneck in model synchronization. Strato aims to solve this problem by creating a software-defined network that is optimized to speed up the data pattern of intern-DC ML training.",
             },
             {
-                img: "/atmos/atmos1.svg",
-                title:"Core Design",
-                description: "Atomos is software defined, consisting of a centralized controller and an array of nodes which collectively form an overlay network.",
+                img: "/strato/strato1.png",
+                title:"Exceptional Performance",
+                description: "Leveraging Rust's powerful zero-cost abstraction and ownsership model, Strato is capable of achieving multi-Gbps throughput on mid-tier cloud vCPUs. The performance is further augmented with coroutines and async I/O, thanks to Rust's powerful tokio runtime. Fairness in ensured in packet processing between coroutines to cater to the needs of distributed communciation algorithms such as RingAllReduce.",
             },
             {
-                img: "/atmos/atmos2.svg",
-                title:"Controller",
-                description: "Powered by TypeScript and PostgresSQL, the controller is capable of actively monitoring network performance and dynamically install routes for flow granularity through a database-oriented API.",
+                img: "/strato/strato2.png",
+                title:"Dynamic multi-path routing",
+                description: "To bypass the bottleneck of the slow WAN, Strato employs a real-time multi-path routing algorithm that is capable of dynamically selecting the best path for each stream on the current network condition. The optimzation is performed on a centralzied controller that seamlessly can be easily extended via a database-oriented API. ",
             },
             {
-                img: "/atmos/atmos3.svg",
-                title:"Node",
-                description: "Powered by Rust's powerful tokio runtime, the node is capable of forwarding packets through parallel routes concurrently at Gbps throughput using multiple cores.",
+                img: "/strato/strato3.png",
+                title:"Seamless Integration with ML Frameworks",
+                description: "Strato is carefully engineered with NCCL and OpenMPI in mind, and seamlessly supports high-level distributed ML frameworks from PyTorch Distributed to HuggingFace Accelerate and DeepSpeed.",
             } 
         ]
     },
@@ -153,19 +153,24 @@ export const projects = [
         tech: "Python, PyTorch, SK-Learn, Pandas",
         slides: [
             {
-                img: "/classified.svg",
+                img: "/deepte/deepte1.png",
                 title:"Motivation",
-                description: "Network traffic engineering (TE) aims to optimize network resource allocation for each data flow. Computing optimal solutions for large-scale network is unscalable. DeepTE employs an ML-based approach to approximate the optimal solution instead.",
+                description: "Network traffic engineering (TE) aims to optimize network resource allocation for each data flow. Computing optimal solutions for large-scale network is time-consuming for large networks, which opens up opportunity for an ML-based approach to approximate the optimal solution.",
             },
             {
-                img: "/classified.svg",
+                img: "/deepte/deepte2.png",
                 title:"Core Challenges Solved",
-                description: "TE problems are formulated as constrained optimization problems. However, training a neural network to approximate the optimal solution while respecting the contraints is inherently difficult. DeepTE employs a novel approach to solve this problem.",
+                description: "TE problems are formulated as constrained optimization problems. However, training a neural network to approximate the optimal solution while respecting the contraints is inherently difficult. DeepTE solves this problem with the novel mechanism Gradient Descent-based Feasibility Projection that guarantees the solution meets contraints within finite iterations.",
             },
             {
-                img: "/classified.svg",
+                img: "/deepte/deepte3.png",
+                title:"Effecient Model Design",
+                description: "DeepTE's core deep neural network model combines the power of state-of-the-art GroupRevGNN to comprehend the relationship between nodes and flows in the large network topology, and leverages parallel fully connected layers to approximate optimal solutions taking into account of the global network state. The model is trained with unsupervised learning and reinforcement learning, and is designed with a parallelism in mind to accelerate training and inference.",
+            },
+            {
+                img: "/deepte/deepte4.png",
                 title:"Performance Achieved",
-                description: "DeepTE is able to achieve over 95% accuracy in predicting the optimal solution for TE problems with 1000+ nodes and 10000+ flows. This is more than 100x improvement over the state-of-the-art solutions.",
+                description: "DeepTE is able to achieve over 95% accuracy in predicting the optimal solution for TE problems with 1000+ nodes and 10000+ flows. Not only does this out-performs state-of-the-art works in terms of accuracy, it also does so under 100ms, which is over 100x improvement in terms of speed.",
             },
         ]
     },

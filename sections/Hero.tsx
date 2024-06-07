@@ -92,7 +92,7 @@ export default function Hero() {
             variants={textVariant(1.2)}
             className="lg:text-3xl md:text-xl text-lg font-mono text-secondary-white mt-8 drop-shadow-[0_0_0.8rem_#ffffff]"
           >
-          Full Stack Developer | Software Engineer
+          ML Researcher | Software Engineer
           </motion.h1>
 
       </motion.div>

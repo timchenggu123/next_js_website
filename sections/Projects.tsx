@@ -40,14 +40,14 @@ export default function Projects({sectionRef, containerRef, sectionScroll}:{
     }
     })
   return (
-    <section ref={sectionRef} className="h-fit w-screen">
-        <div className="md:flex hidden justify-between md:p-10 p-5">
+    <section ref={sectionRef} className="h-fit w-screen flex flex-col items-center">
+        <div className="lg:max-w-[2000px] md:flex hidden justify-between md:p-10 p-5">
             <AnimatePresence>
                 {
                     !hidden &&
                     <motion.div 
                             key={key}
-                            className="h-screen w-screen inset-0 pointer-events-none"
+                            className="h-screen w-screen xl:pl-[150px] inset-0 pointer-events-none"
                             initial={{opacity: 0, x: "-50vw"}}
                             animate={{opacity: 1, x: 0}}
                             transition={{duration: 0.5}}
