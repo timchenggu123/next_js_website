@@ -12,17 +12,17 @@ const Items = [
     link: '#about',
   },
   {
+    name: 'Journey',
+    link: '#journey',
+  },
+  {
     name: 'Skills',
     link: '#skills',
   },
   {
-    name: 'Journey',
-    link: '#journey',
+    name: 'Projects',
+    link: '#projects',
   },
-  // {
-  //   name: 'Projects',
-  //   link: '#projects',
-  // },
   {
     name: 'Contact',
     link: '#contact',
