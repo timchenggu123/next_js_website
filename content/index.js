@@ -100,7 +100,7 @@ export const journey = [
     {
         // working at AMD
         date: "2024.8 - Now",
-        title: "Senior SDE - AI Sowftware",
+        title: "Senior SDE - AI Software",
         org: "AMD",
         bg: "/amd.jpg",
         bullets:[
