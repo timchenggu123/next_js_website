@@ -14,6 +14,7 @@ const frontend = [
 ]
 
 const backend=[
+  "C++",
   "Rust",
   "Java/Kotlin",
   "Ruby on Rails",
@@ -26,11 +27,12 @@ const backend=[
 const machinelearning=[
   "Python",
   "PyTorch",
+  "CUDA",
+  "ROCm/HIP",
   "SK-Learn",
   "HuggingFace",
-  "NCCL",
+  "Ollama",
   "DeepSpeed",
-  "Horovod"
 ]
 
 

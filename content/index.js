@@ -98,7 +98,21 @@ export const journey = [
         skills: "PyTorch · Rust · JavaScript · DeepSpeed"
     },
     {
-        date: "2024.8 - Future",
+        // working at AMD
+        date: "2024.8 - Now",
+        title: "Senior SDE - AI Sowftware",
+        org: "AMD",
+        bg: "/amd.jpg",
+        bullets:[
+            "Develop and maintain the ROCm stack code base for supporting the cutting edge Radon and Instinct series GPUs.",
+            "Evaluate and propose new ROCM features along with stack-level integration strategies across component teams.",
+            "Demonstrate system level understanding of the ROCm stack and perform end-to-end debugging.",
+            "Ensure outstanding relationship with clients, drive open-source community engagmment and satisfaction, as well as manage expectations",
+          ],
+        skills: "C++ · ROCm · CUDA · Python"
+    },
+    {
+        date: "??? - Future",
         title: "Engineer",
         org: "Your Company",
         bg: "/tbd.svg",
