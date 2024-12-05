@@ -64,7 +64,7 @@ export default function Contact() {
                 whileInView={{opacity:1}}
                 onClick={() => {handleCopy()}}
                 className="invert md:h-[10rem] md:w-[8rem] h-[4rem] w-[4rem] hover:drop-shadow-[0_0_0.3rem_#ffffff]">
-                    <AiTwotoneMail color="black" alt="Click To Copy" size="auto" />
+                    <AiTwotoneMail color="black" size="auto" />
             </motion.a>
                 
             <motion.a   
