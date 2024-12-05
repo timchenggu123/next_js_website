@@ -95,6 +95,13 @@ export default function Hero() {
           ML Researcher | Software Engineer
           </motion.h1>
 
+          <motion.h1
+            variants={textVariant(1.2)}
+            className="lg:text-xl md:text-lg text-md font-mono text-secondary-white mt-16"
+          >
+          visit my blog at <a href="https://blog.timgu.me" className="text-blue-500">blog.timgu.me</a>
+          </motion.h1>
+
       </motion.div>
       </section> 
     </>
