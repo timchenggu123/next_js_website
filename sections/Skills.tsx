@@ -37,22 +37,13 @@ const machinelearning=[
 
 
 export default function Skills({scroll: scrollParent}:{scroll: MotionValue<number>}) {
-  const fixedStyle: CSSProperties = {
-    position: 'fixed',
-  }
-  const regularStyle: CSSProperties = {
-    position: 'static',
-  }
-  const [fixed, setFixed] = useState(regularStyle);
   const [hidden, setHidden] = useState(true);
   useEffect(() => {
     const unsubscribe = scrollParent.on("change", (latest) => {
       if (latest == 0 || latest == 1){
         setHidden(true);
-        setFixed(regularStyle);
       }else {
         setHidden(false);
-        setFixed(fixedStyle);
       }
     })
     return () => {
