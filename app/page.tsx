@@ -36,11 +36,11 @@ export default function Home() {
       {/* Section pad */}
       <div className="block w-screen h-[10rem] bg-transparent"/>
 
-      <div ref={refSkills} className="h-[200rem] -z-9">
+      <div ref={refSkills} className="h-[400rem] -z-9">
         <div className="relative -z-8">
           <Skills scroll={scrollSkills}/>
-          <div className="absolute top-0 w-screen h-[200rem] bg-transparent z-10">
-            <div id={"skills"} className="relative w-screen h-screen bg-transparent z-10 top-[120rem]"/>
+          <div className="absolute top-0 w-screen h-[400rem] bg-transparent z-10">
+            <div id={"skills"} className="relative w-screen h-screen bg-transparent z-10 top-[320rem]"/>
           </div>
           
         </div>
