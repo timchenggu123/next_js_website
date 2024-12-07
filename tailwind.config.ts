@@ -18,6 +18,7 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      glowingShadow: 'drop-shadow(0 0 0.5rem #ffffff)',
     },
   },
   plugins: [require("daisyui")],

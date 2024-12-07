@@ -3,42 +3,10 @@ import CursorBlinker from "@/components/Cursor"
 import { motion, AnimatePresence, MotionValue, useMotionValueEvent, useScroll } from "framer-motion"
 import { CSSProperties, useEffect, useRef, useState } from "react"
 
-// const frontend = [
-//   "[frontend]",
-//   "\n",
-//   "Next.js",
-//   "React",
-//   "Node.js",
-//   "TailwindCSS",
-//   "Framer Motion",
-//   "TypeScript",
-//   "Html/CSS",
-// ]
+
 const frontend = "Next.js React Node.js TailwindCSS FramerMotion TypeScript Html/CSS"
 
-// const backend=[
-//   "C++",
-//   "Rust",
-//   "Java/Kotlin",
-//   "Ruby on Rails",
-//   "Docker/Kubernetes",
-//   "PostgresSQL/MySQL",
-//   "MangoDB",
-//   "AWS Suite",
-// ]
-
 const backend = "C++ Rust Java/Kotlin RubyOnRails Docker/Kubernetes PostgresSQL/MySQL MangoDB AWS Suite"
-
-// const machinelearning=[
-//   "Python",
-//   "PyTorch",
-//   "CUDA",
-//   "ROCm/HIP",
-//   "SK-Learn",
-//   "HuggingFace",
-//   "Ollama",
-//   "DeepSpeed",
-// ]
 
 const machinelearning = "Python PyTorch CUDA ROCm/HIP SK-Learn HuggingFace Ollama DeepSpeed"
 

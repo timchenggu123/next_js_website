@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from '../styles';
 import {useState} from 'react';
 import { navVariants, staggerContainer } from '../utils/motion';
+import CursorBlinker from './Cursor';
 
 const Items = [
   {
@@ -37,19 +38,25 @@ export default function Navbar() {
     initial="hidden"
     whileInView="show"
     viewport={{ once: true, amount: 0.25 }}
-    className={`${styles.xPaddings} py-8 relative`}
+    className={`${styles.xPaddings} py-3 relative`}
     onMouseLeave={() => setIsHovering(false)}
   >
-    <div className="flex justify-end">
-    {/* <div className="absolute w-[50%] inset-0 gradient-01"/> */}
-      <div className="flex-grow flex flex-col, items-center">
+    <div className="flex justify-start h-[3rem]">
+      <AnimatePresence>
+        {!isHovering && <motion.div
+          className="w-[8rem] text-3xl"
+          onMouseEnter={() => setIsHovering(true)}
+          exit={{ opacity: 0, width: 0, fontSize: 0 }}
+        >{'> $ cd '}</motion.div>}
+      </AnimatePresence>
+      <div className="flex-grow flex flex-col items-center">
         <AnimatePresence>
         {isHovering && (
           <motion.div
             initial={{ opacity: 0, x: "10%"}}
             animate={{ opacity: 1, x: 0, margin: "auto"}}
-            className={`${styles.innerWidth} flex flex-col md:flex-row items-center justify-around`}
-            exit={{ opacity: 0, x: "10%" }}
+          className={`${styles.innerWidth} flex flex-col md:flex-row items-center justify-around backdrop-blur-xl border-b-zinc-700 border-b-2 rounded-3xl`}
+            exit={{ opacity: 0, x: "10%"}}
           >
             {Items.map((item) => (
                 <a
@@ -65,16 +72,6 @@ export default function Navbar() {
           )
         }
         </AnimatePresence>
-      </div>
-      <div className="hover:cursor-pointer hover:scale-125 hover:drop-shadow-[0_0_0.5rem_#ffffff] padding-2 h-14 w-14 p-2">
-        <Image src="/menu.svg" 
-          alt="menu"
-          width={48}
-          height={48}
-          style={{objectFit: 'cover'}}
-          className="h-full w-full"
-          onMouseEnter={() => setIsHovering(true)}
-        />
       </div>
     </div>
   </motion.nav>)

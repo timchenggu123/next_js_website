@@ -16,10 +16,10 @@ export default function Home() {
 
   return (
     <div ref={refContainer} className=" h-screen overflow-y-scroll overflow-x-hidden bg-primary-black -z-10">
-      <div className="snap-start h-screen flex flex-col">
-        <div>
+      <div className="fixed w-screen z-20">
           <Navbar/>
-        </div>  
+      </div>  
+      <div className="snap-start h-screen flex flex-col">
         <div className="flex-grow">
           <Hero/>
         </div>
