@@ -1,4 +1,4 @@
-import React, { use, useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import {AnimatePresence, motion} from 'framer-motion';
 import Image from 'next/image';
 import { type } from 'os';
