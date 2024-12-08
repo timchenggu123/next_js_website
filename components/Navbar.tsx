@@ -44,19 +44,19 @@ export default function Navbar() {
     <div className="flex justify-start h-[3rem]">
       <AnimatePresence>
         {!isHovering && <motion.div
-          className="w-[8rem] text-3xl"
+          className="w-[7rem] text-2xl p-3 backdrop-blur-lg rounded-xl border-b-zinc-700 border-b-1"
           onMouseEnter={() => setIsHovering(true)}
-          exit={{ opacity: 0, width: 0, fontSize: 0 }}
+          exit={{ opacity: 0, fontSize: 0, padding: 0, width: 0}}
         >{'> $ cd '}</motion.div>}
       </AnimatePresence>
       <div className="flex-grow flex flex-col items-center">
         <AnimatePresence>
         {isHovering && (
           <motion.div
-            initial={{ opacity: 0, x: "10%"}}
+            initial={{ opacity: 0, x: "-10%"}}
             animate={{ opacity: 1, x: 0, margin: "auto"}}
           className={`${styles.innerWidth} flex flex-col md:flex-row items-center justify-around backdrop-blur-xl border-b-zinc-700 border-b-2 rounded-3xl`}
-            exit={{ opacity: 0, x: "10%"}}
+            exit={{ opacity: 0, x: "-10%"}}
           >
             {Items.map((item) => (
                 <a
